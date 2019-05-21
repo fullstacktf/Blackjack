@@ -1,7 +1,7 @@
 /**
  * Programa Juego blackjack
  * Alba Cruz Torres
- * Dario 
+ * Dario Algo Algo
  */
 
 function crearMazo(j, contador) {
