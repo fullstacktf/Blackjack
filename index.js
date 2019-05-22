@@ -8,11 +8,11 @@ function crearMazo(j, contador) {
     j++;
     switch (j) {
       case 1:
-        for (var i = 0; i < 1; i++) {
+        for (let i = 0; i < 1; i++) {
           mazo[i] = 'AST';
         }
   
-        for (var i = 1; i < 12; i++) {
+        for (let i = 1; i < 12; i++) {
           mazo[i] = contador + 'T';
           contador++;
         }
@@ -21,11 +21,11 @@ function crearMazo(j, contador) {
   
       case 2:
         contador = 2;
-        for (var i = 12; i < 13; i++) {
+        for (let i = 12; i < 13; i++) {
           mazo[i] = 'ASC';
         }
   
-        for (var i = 13; i < 24; i++) {
+        for (let i = 13; i < 24; i++) {
           mazo[i] = contador + 'C';
           contador++;
         }
@@ -34,11 +34,11 @@ function crearMazo(j, contador) {
   
       case 3:
         contador = 2;
-        for (var i = 24; i < 25; i++) {
+        for (let i = 24; i < 25; i++) {
           mazo[i] = 'ASR';
         }
   
-        for (var i = 25; i < 36; i++) {
+        for (let i = 25; i < 36; i++) {
           mazo[i] = contador + 'R';
           contador++;
         }
@@ -47,11 +47,11 @@ function crearMazo(j, contador) {
   
       default:
         contador = 2;
-        for (var i = 36; i < 37; i++) {
+        for (let i = 36; i < 37; i++) {
           mazo[i] = 'ASP';
         }
   
-        for (var i = 37; i < 48; i++) {
+        for (let i = 37; i < 48; i++) {
           mazo[i] = contador + 'P';
           contador++;
         }
@@ -73,15 +73,15 @@ function crearMazo(j, contador) {
     }
   }
   
-  var ranFinal;
-  var mazo = [];
-  var j = 0;
-  var contador = 2;
+  let ranFinal;
+  let mazo = [];
+  let j = 0;
+  let contador = 2;
   crearMazo(j, contador);
   repartirCarta(mazo);
   console.log(ranFinal);
   
-  for(var k=0; k<mazo.length; k++){
+  for(let k=0; k<mazo.length; k++){
     console.log(mazo[k]);
   }
   
