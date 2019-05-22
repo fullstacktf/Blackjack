@@ -71,31 +71,55 @@ function repartirCarta(mazo){
   mazo[ran]= "elegido";
 }
 
+function juego(){
+  repartirCarta(mazo);
+  console.log('Carta del jugador = ', ranFinal);
+  if((ranFinal == 'ASC') || (ranFinal == 'AST') || (ranFinal == 'ASP') || (ranFinal == 'ASR')){
+    ranFinal = prompt('Introduzca valor de AS (1 u 11)');
+  }
+  resultado += Number.parseInt(ranFinal);
+
+  repartirCarta(mazo);
+  console.log('Carta del crupier =', ranFinal);
+  if((ranFinal == 'ASC') || (ranFinal == 'AST') || (ranFinal == 'ASP') || (ranFinal == 'ASR')){
+    ranFinal = prompt('Introduzca valor de AS (1 u 11)');
+    console.log('Valor de AS elegido= ', ranFinal);
+  }
+  resultado += Number.parseInt(ranFinal);
+
+  console.log('El resultado es = ', resultado);
+  
+  /*for(let k=0; k<mazo.length; k++){
+    console.log(mazo[k]);
+  }*/
+}
+
 let resultado = 0;
 let ranFinal;
 let mazo = [];
 let j = 0;
 let contador = 2;
+let continua = false;
 
 crearMazo(j, contador);
+juego();
 
-repartirCarta(mazo);
-console.log('Carta del jugador = ', ranFinal);
-if((ranFinal == 'ASC') || (ranFinal == 'AST') || (ranFinal == 'ASP') || (ranFinal == 'ASR')){
-  ranFinal = prompt('Introduzca valor de AS (1 u 11)');
+while(resultado < 21){
+    continua = confirm('¿Desea recibir carta?');
+    if(continua){
+      juego();
+    }
+    else{
+      console.log('Perdiste!!');
+      break;
+    }
 }
-resultado += Number.parseInt(ranFinal);
 
-repartirCarta(mazo);
-console.log('Carta del crupier =', ranFinal);
-if((ranFinal == 'ASC') || (ranFinal == 'AST') || (ranFinal == 'ASP') || (ranFinal == 'ASR')){
-  ranFinal = prompt('Introduzca valor de AS (1 u 11)');
-  console.log('Valor de AS elegido= ', ranFinal);
+if(resultado == 21){
+  console.log('Has ganado!!');
 }
-resultado += Number.parseInt(ranFinal);
 
-console.log('El resultado es = ', resultado);
+else{
+  console.log('Perdiste!!');
+}
 
-/*for(let k=0; k<mazo.length; k++){
-  console.log(mazo[k]);
-}*/
